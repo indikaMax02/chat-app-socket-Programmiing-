@@ -3,6 +3,9 @@
     <output-path>$PROJECT_DIR$/out/artifacts/chat_app_Socket_Programming__jar</output-path>
     <root id="archive" name="chat-app(Socket-Programming).jar">
       <element id="module-output" name="chat-app(Socket-Programming)" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/emoji/emojisfx-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/jfoenix-8.0.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/lib/mysql-connector-java-5.1.49.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

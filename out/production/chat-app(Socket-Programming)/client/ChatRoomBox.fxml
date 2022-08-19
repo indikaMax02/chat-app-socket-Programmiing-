@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
@@ -49,19 +53,167 @@
       </Pane>
       <Pane fx:id="chat" layoutX="241.0" prefHeight="491.0" prefWidth="498.0" style="-fx-background-color: white;">
          <children>
-            <TextArea fx:id="msgRoom" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="416.0" prefWidth="468.0" />
             <TextField fx:id="msgField" layoutX="14.0" layoutY="441.0" onKeyPressed="#sendMessageByKey" prefHeight="32.0" prefWidth="430.0" promptText="Type a message" style="-fx-background-radius: 90;" />
             <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="444.0" layoutY="441.0" onMouseClicked="#handleSendEvent" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/icons8-send-100.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="404.0" layoutY="445.0" onMousePressed="#selectImage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="376.0" layoutY="446.0" onMouseClicked="#sendImageOnMouseClick" onMousePressed="#selectImage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/icons8-camera-96.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="408.0" layoutY="445.0" onMousePressed="#selectImage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/emoji.png" />
+               </image>
+            </ImageView>
+            <ScrollPane hbarPolicy="ALWAYS" layoutX="14.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="420.0" prefWidth="466.0" rotate="180.0" vbarPolicy="ALWAYS">
+               <content>
+                  <VBox fx:id="vBoxAppend" cache="true" nodeOrientation="RIGHT_TO_LEFT" prefHeight="46.0" prefWidth="453.0" rotate="180.0" spacing="10.0" />
+               </content>
+            </ScrollPane>
          </children>
       </Pane>
+      <GridPane alignment="CENTER" layoutX="293.0" layoutY="284.0" prefHeight="144.0" prefWidth="395.0" style="-fx-background-color: #CAD5E2;" visible="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="58.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="57.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="57.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="59.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="57.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="58.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="56.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(6).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(3).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(2).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(4).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(5).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(7).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(8).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(9).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(10).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(11).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(12).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(13).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(14).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(15).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(16).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(17).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(18).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(19).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(20).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(22).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(23).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(24).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@assets/emoji/emoji_yellow%20(25).png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

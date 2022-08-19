@@ -131,7 +131,7 @@ public class LoginFormController implements Initializable {
             Socket socket= null;
             try {
                 //localhost:8001
-                socket = new Socket("0.tcp.in.ngrok.io",17097);
+                socket = new Socket("localhost",8001);
 
                 System.out.println("Connected Chat server Login");
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
@@ -204,7 +204,7 @@ public class LoginFormController implements Initializable {
                      new Thread(()->{
                          try {
                              //localhost:8000
-                             Socket socket=new Socket("0.tcp.in.ngrok.io",14760);
+                             Socket socket=new Socket("localhost",8000);
                              ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
                              BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
